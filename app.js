@@ -51,7 +51,8 @@ app.use(
 // Set up Mustache as the template engine
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
-app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'views')));
 
 
 // Use authentication middleware
@@ -77,37 +78,31 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something went wrong!');
 });
 
-app.use("/api/events", eventRoutes);
+app.use("/api/event", eventRoutes);
 
 // Define a default route to render a Mustache file
 app.get('/', (req, res) => {
-  const list = [{ name: "Francis"}, { name: "John"}, { name: "PAscual"}];
-  res.render('index.mustache', { title: "Test", list: list});
-});
-
-app.get('/api/events/${eventId}', (req, res) => {
-  res.render('events.mustache');
-});
-
-app.get('/dashboard', (req, res) => {
-  res.render('dashboard.mustache');
-});
-
-
-app.get('/about', (req, res) => {
-  res.render('about.mustache');
-});
-
-app.get('/404/', (req, res) => {
-  res.render('404.mustache');
-});
-
-app.get('/api/events/${eventId}/details', (req, res) => {
-  res.render('event-details.mustache');
+  res.render('index');
 });
 
 app.get('/api/events/', (req, res) => {
-  res.render('event-management.mustache');
+  res.render('events');
+});
+
+app.get('/dashboard', (req, res) => {
+  res.render('dashboard');
+});
+
+app.get('/event', (req, res) => {
+  res.render('event');
+});
+
+app.get('/about', (req, res) => {
+  res.render('about');
+});
+
+app.get('/404/', (req, res) => {
+  res.render('404');
 });
 // Start the server
 app.listen(port, () => {

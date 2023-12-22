@@ -15,7 +15,7 @@
         <!-- Top Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">ShuleSpace</a>
+                <a class="navbar-brand" href="/">ShuleSpace</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,13 +23,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard.html">Dashboard</a>
+                            <a class="nav-link" href="/dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
+                            <a class="nav-link" href="/api/users/login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="register.html">Register</a>
+                            <a class="nav-link" href="/api/users/register">Register</a>
                         </li>
                     </ul>
                 </div>
@@ -43,9 +43,9 @@
                 <div class="card">
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a href="events.html">Events</a></li>
-                            <li class="list-group-item"><a href="dashboard.html">Dashboard</a></li>
-                            <li class="list-group-item"><a href="about.html">About</a></li>
+                            <li class="list-group-item"><a href="/event">Events</a></li>
+                            <li class="list-group-item"><a href="/dashboard">Dashboard</a></li>
+                            <li class="list-group-item"><a href="/about">About</a></li>
                         </ul>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                         <h9 class="display-4">Welcome to ShuleSpace</h9>
                         <p class="lead">Re-unite, and onnect with your fellow alumni</p>
                         <hr class="my-4">
-                        <a class="btn btn-primary btn-md" href="login.html" role="button">Login</a>
+                        <a class="btn btn-primary btn-md" href="login" role="button">Login</a>
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@
                                 <h5 class="card-title">Alumni Connect</h5>
                                 <p class="card-text">Network and reconnect with your fellow alumni who graduated in
                                     2015. We have invited several alumni since 2015</p>
-                                <a href="events.html" class="btn btn-primary">Learn More</a>
+                                <a href="events" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -110,20 +110,20 @@
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a class="text-light" href="/">Home</a></li>
-                        <li><a class="text-light" href="/events">Events</a></li>
-                        <li><a class="text-light" href="/blog">Blog</a></li>
-                        <li><a class="text-light" href="/contact">Contact</a></li>
+                        <li><a class="text-light" href="/index">Home</a></li>
+                        <li><a class="text-light" href="/event">Events</a></li>
+                        <li><a class="text-light" href="/404">Blog</a></li>
+                        <li><a class="text-light" href="/404">Contact</a></li>
                     </ul>
                 </div>
-
+    
                 <!-- Site Functionalities -->
                 <div class="col-md-4">
                     <h5>Site Functionalities</h5>
                     <ul class="list-unstyled">
-                        <li><a class="text-light" href="/user/profile">Profile</a></li>
-                        <li><a class="text-light" href="/user/settings">Settings</a></li>
-                        <li><a class="text-light" href="/user/logout">Logout</a></li>
+                        <li><a class="text-light" href="/dashboard">Profile</a></li>
+                        <li><a class="text-light" href="/404">Settings</a></li>
+                        <li><a class="text-light" href="/login">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -136,9 +136,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-</body>
 
-</html>
 <script>
     document.addEventListener('DOMContentLoaded', async function () {
         // Fetch user events and populate the event list
@@ -190,7 +188,7 @@
         const eventList = document.getElementById('eventList');
         eventList.innerHTML = '';
 
-        events.slice(0, 5).forEach(event => {
+        events.slice(0, 6).forEach(event => {
             const listItem = document.createElement('li');
             listItem.dataset.id = event._id;
             listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
@@ -208,3 +206,7 @@
 
 
 </script>
+
+</body>
+
+</html>

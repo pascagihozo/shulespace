@@ -17,20 +17,20 @@
         <!-- Navigation bar using Bootstrap -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="index.html">ShuleSpace</a>
+                <a class="navbar-brand" href="/">ShuleSpace</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard.html">Dashboard</a>
+                            <a class="nav-link" href="/dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
+                            <a class="nav-link" href="/api/users/login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="register.html">Register</a>
+                            <a class="nav-link" href="/api/users/register">Register</a>
                         </li>
                     </ul>
                 </div>
@@ -80,14 +80,14 @@
         reconnect with your alma mater and fellow graduates.</p>
                 </div>
     
-                <!-- Quick Links -->
-                <div class="col-md-4">
+                 <!-- Quick Links -->
+                 <div class="col-md-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a class="text-light" href="/">Home</a></li>
+                        <li><a class="text-light" href="/index">Home</a></li>
                         <li><a class="text-light" href="/events">Events</a></li>
-                        <li><a class="text-light" href="/blog">Blog</a></li>
-                        <li><a class="text-light" href="/contact">Contact</a></li>
+                        <li><a class="text-light" href="/404">Blog</a></li>
+                        <li><a class="text-light" href="/404">Contact</a></li>
                     </ul>
                 </div>
     
@@ -95,9 +95,9 @@
                 <div class="col-md-4">
                     <h5>Site Functionalities</h5>
                     <ul class="list-unstyled">
-                        <li><a class="text-light" href="/user/profile">Profile</a></li>
-                        <li><a class="text-light" href="/user/settings">Settings</a></li>
-                        <li><a class="text-light" href="/user/logout">Logout</a></li>
+                        <li><a class="text-light" href="/dashboard">Profile</a></li>
+                        <li><a class="text-light" href="/404">Settings</a></li>
+                        <li><a class="text-light" href="/login">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -125,7 +125,7 @@
 
                 if (response.status === 201) {
                     // document.getElementById('message').textContent = 'Sign up successful! PLease log in';
-                    window.location.href = 'http://127.0.0.1:5501/client/login.html';
+                    window.location.href = 'http://localhost:3000/api/users/login';
                     
                 } else if (response.status === 400) {
                     const data = await response.json();
